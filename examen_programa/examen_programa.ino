@@ -33,14 +33,18 @@ int velocidad=0;
 int frecuencia=0;
 //
 int dis_aum=0;
-//
-int tiem_frec=0;
+/*contadores de tiempo transcurrido*/
+  //para contar tiempo faltante para cambio de frecuencia
+  int tiem_frec=0;
+  //
+  int tiem_modo=0;
+  //
+  int apagado=0;
 //
 int modo=1;
 //
 int duracion_led=500;
-//
-int tiem_modo=0;
+
 //
 int leds[4]=
 {
@@ -53,8 +57,7 @@ LED_4
 int led_actual=0;
 //
 int low_high=0;
-//
-int apagado=0;
+
 //requerido por "BOTONES.h" pociciones de guardado:
   /*posicion en que guarda la informacion de botones
   *[0]B_STAR
