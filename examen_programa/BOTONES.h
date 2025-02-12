@@ -15,7 +15,7 @@ extern unsigned int BOTONES_viejo[];
 void barrido_botones()
 {
   //guarda los valores de viejos para actualizar
-  for (int i = 0; i <= 5; i++) {
+  for (int i = 0; i <= 6; i++) {
     BOTONES_viejo[i] = BOTONES_nuevo[i];
   }
   
@@ -27,7 +27,6 @@ void barrido_botones()
   BOTONES_nuevo[4] = digitalRead(B_VELO_CAMB);
   BOTONES_nuevo[5] = digitalRead(B_MODO_CAMB);
   BOTONES_nuevo[6] = digitalRead(B_INV);
-  
 }
 
 #endif

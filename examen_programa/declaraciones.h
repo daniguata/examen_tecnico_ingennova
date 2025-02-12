@@ -42,10 +42,10 @@ void declaracion(){
     pinMode(LED_3, OUTPUT);
     pinMode(LED_4, OUTPUT);
     pinMode(LED_INDICADOR, OUTPUT);
-    analogWrite(LED_1, LOW);
-    analogWrite(LED_2, LOW);
-    analogWrite(LED_3, LOW);
-    analogWrite(LED_4, LOW);
-    analogWrite(LED_INDICADOR, LOW);
+    digitalWrite(LED_1, LOW);
+    digitalWrite(LED_2, LOW);
+    digitalWrite(LED_3, LOW);
+    digitalWrite(LED_4, LOW);
+    digitalWrite(LED_INDICADOR, LOW);
 }
 #endif
