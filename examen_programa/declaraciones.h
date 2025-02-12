@@ -1,51 +1,48 @@
 #ifndef declaraciones_h
 #define declaraciones_h
-/*solo para declarar las variables y ver el .ino mas vacio*/
 
-/*Pine Motor*/
-  extern const int MOTOR;
+#include <Arduino.h>
 
-/* Pines BOTONES B*/
-  //1 presionado y 0 no presionado
-  extern const int B_STAR;
-  extern const int B_PWM_MAS;
-  extern const int B_PWM_MENOS;
-  extern const int B_STOP;
-  extern const int B_VELO_CAMB;
-  extern const int B_MODO_CAMB;
-  extern const int B_INV;
+// Pines
+extern const int MOTOR;
+extern const int B_STAR;
+extern const int B_PWM_MAS;
+extern const int B_PWM_MENOS;
+extern const int B_STOP;
+extern const int B_VELO_CAMB;
+extern const int B_MODO_CAMB;
+extern const int B_INV;
+extern const int LED_1;
+extern const int LED_2;
+extern const int LED_3;
+extern const int LED_4;
+extern const int LED_INDICADOR;
 
-/* Pines Leds*/
-  extern const int LED_1;
-  extern const int LED_2;
-  extern const int LED_3;
-  extern const int LED_4;
-  extern const int LED_INDICADOR;
+// Variables globales
+extern unsigned long apagado;
+extern unsigned long tiem_frec;
+extern int velocidad;
+extern int frecuencia;
+extern int dis_aum;
+extern int modo;
+extern int duracion_led;
+extern int leds[4];
+extern int valor_leds[4];
+extern int led_actual;
+extern int low_high;
+extern unsigned int BOTONES_nuevo[];
+extern unsigned int BOTONES_viejo[];
 
-void declaracion(){
-  /* declaracion de pin de motor y sus valor inicial*/
-    pinMode(MOTOR, OUTPUT);
-    analogWrite(MOTOR, LOW);
-  
-  /*declaracion de BOTONES*/
-    pinMode(B_STAR, INPUT);
-    pinMode(B_PWM_MAS, INPUT);
-    pinMode(B_PWM_MENOS, INPUT);
-    pinMode(B_STOP, INPUT);
-    pinMode(B_VELO_CAMB, INPUT);
-    pinMode(B_MODO_CAMB, INPUT);
-    pinMode(B_INV, INPUT);
+// Funciones
+void declaracion();
+void cambiarFrecuenciaPWM(int frecuencia);
+void barrido_botones();
+void BOTONES_AUMENTO_DISMINUCION();
+void SELECCION_MODOS_leds();
+void apagado_leds();
+void MODO_NORMAL_LEDS();
+void MODO_PARES_LEDS();
+void MODO_NORMAL_LEDS_INVERTIDOS();
+void MODO_PARES_LEDS_INVERTIDOS();
 
-  /*declaracion de leds y inicializacion*/
-    pinMode(LED_1, OUTPUT);
-    pinMode(LED_2, OUTPUT);
-    pinMode(LED_3, OUTPUT);
-    pinMode(LED_4, OUTPUT);
-    pinMode(LED_INDICADOR, OUTPUT);
-    digitalWrite(LED_1, LOW);
-    digitalWrite(LED_2, LOW);
-    digitalWrite(LED_3, LOW);
-    digitalWrite(LED_4, LOW);
-    digitalWrite(LED_INDICADOR, LOW);
-}
 #endif
