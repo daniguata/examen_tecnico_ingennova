@@ -6,9 +6,6 @@
 
 void setup() {
   Serial.begin(9600);
-
-  
-
   // Configura el Timer1 para generar una señal PWM de 1 kHz
   TCCR1A = _BV(COM1A1) | _BV(WGM11);
   TCCR1B = _BV(WGM13) | _BV(WGM12) | _BV(CS10);
