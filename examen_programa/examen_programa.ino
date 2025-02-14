@@ -6,7 +6,8 @@
 
 void setup() {
   Serial.begin(9600);
-  declaracion();
+
+  
 
   // Configura el Timer1 para generar una señal PWM de 1 kHz
   TCCR1A = _BV(COM1A1) | _BV(WGM11);
@@ -14,6 +15,7 @@ void setup() {
   ICR1 = 999; // Frecuencia = 16 MHz / (1 * (999 + 1)) = 1 kHz
   OCR1A = round((velocidad * ICR1) / 100); // Ciclo de trabajo = 50%
   DDRB |= _BV(PB3); // Pin 11 como salida
+  declaracion();
 }
 
 void loop() {
@@ -72,10 +74,12 @@ void loop() {
     case STOP:
       apagado_leds();
       analogWrite(MOTOR, LOW);
+      
       int valor_T_stop = millis() - STOP_T;
 
       if ((millis() - STOP_T) >= 10000) {
         asignar(START);
+        digitalWrite(LED_INDICADOR, LOW);
       }
 
       Serial.print("STOP: ");
